@@ -4,12 +4,20 @@
     {
       "src": "src/*.js",
       "use": "@now/node"
+    },
+    {
+      "src": "index.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
       "src": "/r/(?<r>[\\d]{1,3})/g/(?<g>[\\d]{1,3})/b/(?<b>[\\d]{1,3}).svg",
       "dest": "src/rgb.js?r=$r&g=$g&b=$b"
+    },
+    {
+      "src": "/.*",
+      "dest": "index.js"
     }
   ]
 }
