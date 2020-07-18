@@ -1,4 +1,4 @@
-const { createSvgStr, createResponseHeader } = require('./lib')
+const { createSvgStr, createResponseHeader } = require('../lib')
 
 module.exports = async (req, res) => {
   const { r, g, b, a } = req.query
