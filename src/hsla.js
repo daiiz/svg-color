@@ -1,13 +1,13 @@
 const { createSvgStr, createResponseHeader } = require('./lib')
 
 module.exports = async (req, res) => {
-  const { r, g, b, a } = req.query
-  let colorStr = `${parseInt(r)},${parseInt(g)},${parseInt(b)}`
-  let color = `rgb(${colorStr})`
+  const { h, s, l, a } = req.query
+  let colorStr = `${h}, ${s}%, ${l}%`
+  let color = `hsl(${colorStr})`
 
   if (a !== undefined) {
     colorStr = `${colorStr},${Math.min(1, parseFloat(a))}`
-    color = `rgba(${colorStr})`
+    color = `hsla(${colorStr})`
   }
 
   const svgStr = createSvgStr({ color })
