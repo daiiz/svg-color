@@ -25,3 +25,7 @@ $ npm run start
 ### HSLA
 - https://svg-color.vercel.app/h/50/s/100/l/50/a/0.3.svg
 - http://localhost:3000/h/50/s/100/l/50/a/0.3.svg
+
+### CMYK
+- https://svg-color.vercel.app/c/100/m/0/y/0/k/0.svg
+- http://localhost:3000/c/100/m/0/y/0/k/0.svg

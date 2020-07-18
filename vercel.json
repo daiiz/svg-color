@@ -32,6 +32,10 @@
       "dest": "src/hsla.js?h=$h&s=$s&l=$l"
     },
     {
+      "src": "/c/(?<c>[\\d]{1,3})/m/(?<m>[\\d]{1,3})/y/(?<y>[\\d]{1,3})/k/(?<k>[\\d]{1,3}).svg",
+      "dest": "src/cmyk.js?c=$c&m=$m&y=$y&k=$k"
+    },
+    {
       "src": "/.*",
       "dest": "index.js"
     }
