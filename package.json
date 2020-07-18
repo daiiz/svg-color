@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/.bin/vercel dev",
+    "deploy": "./node_modules/.bin/vercel --prod"
   },
   "author": "daiiz",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^19.1.2"
+  }
 }
