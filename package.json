@@ -8,7 +8,9 @@
   },
   "author": "daiiz",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "color-convert": "^2.0.1"
+  },
   "devDependencies": {
     "vercel": "^19.1.2"
   }
