@@ -6,7 +6,7 @@ $ npm run start
 
 ## NOTE
 
-### Colors HEX
+### ![](https://svg-color.vercel.app/hex/ffd500.svg) Colors HEX
 - https://svg-color.vercel.app/hex/ffd500.svg
 - http://localhost:3000/hex/ffd500.svg
 
