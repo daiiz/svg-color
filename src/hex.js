@@ -5,7 +5,10 @@ function parseOptions(optionsStr = "") {
     .split(".")
     .map((tok) => tok.trim())
     .filter((tok) => !!tok);
-  const options = Object.create(null);
+  const options = {
+    shape: "rect",
+  };
+
   for (const tok of toks) {
     if (["circle"].includes(tok)) {
       options.shape = tok;
@@ -17,9 +20,8 @@ function parseOptions(optionsStr = "") {
 module.exports = async (req, res) => {
   const { hex } = req.query;
   const options = parseOptions(req.query.options);
-  console.log(`hex: ${hex}`, options);
   const color = `#${hex}`;
-  const svgStr = createSvgStr({ color });
+  const svgStr = createSvgStr({ ...options, color });
   res.writeHead(200, createResponseHeader({ color }));
   res.end(svgStr);
 };
