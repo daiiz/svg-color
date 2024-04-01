@@ -1,3 +1,20 @@
+function parseOptions(optionsStr = "") {
+  const toks = optionsStr
+    .split(".")
+    .map((tok) => tok.trim())
+    .filter((tok) => !!tok);
+  const options = {
+    shape: "rect",
+  };
+
+  for (const tok of toks) {
+    if (["circle"].includes(tok)) {
+      options.shape = tok;
+    }
+  }
+  return options;
+}
+
 const createSvgStr = ({ color, shape }) => {
   const width = 20;
   const height = 20;
@@ -26,6 +43,7 @@ const createResponseHeader = ({ color }) => {
 };
 
 module.exports = {
+  parseOptions,
   createSvgStr,
   createResponseHeader,
 };
