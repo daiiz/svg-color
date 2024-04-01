@@ -14,6 +14,8 @@ const parseOptions = (optionsStr = "") => {
       options.shape = "circle";
     } else if (["up_pointing_triangle", "triangle", "▲"].includes(tok)) {
       options.shape = "up_pointing_triangle";
+    } else if (["down_pointing_triangle", "▼"].includes(tok)) {
+      options.shape = "down_pointing_triangle";
     } else if (["star", "★"].includes(tok)) {
       options.shape = "star";
     }
@@ -51,6 +53,20 @@ const createSvgStr = ({ color, shape }) => {
         `${topMargin},${height + bottomMargin}`,
         `${topMargin + side / 2},${bottomMargin}`,
         `${topMargin + side},${height + bottomMargin}`,
+      ];
+      return `<polygon points="${trianglePoints.join(
+        " "
+      )}" fill="${color}"></polygon>`;
+    } else if (shape === "down_pointing_triangle") {
+      // GitHub Copilot: 視覚的にバランスの良い逆正三角形を書く。上下の余白が均等になるように配置する。
+      const side = width * 0.8;
+      const height = (Math.sqrt(3) / 2) * side;
+      const topMargin = (width - side) / 2;
+      const bottomMargin = (width - side) / 2;
+      const trianglePoints = [
+        `${topMargin},${bottomMargin}`,
+        `${topMargin + side / 2},${height + bottomMargin}`,
+        `${topMargin + side},${bottomMargin}`,
       ];
       return `<polygon points="${trianglePoints.join(
         " "
