@@ -4,11 +4,13 @@ const parseOptions = (optionsStr = "") => {
     .map((tok) => tok.trim())
     .filter((tok) => !!tok);
   const options = {
-    shape: "rect",
+    shape: "rect", // 余白なしの正方形（Legacy）
   };
 
   for (const tok of toks) {
-    if (["circle", "●"].includes(tok)) {
+    if (["square", "■"].includes(tok)) {
+      options.shape = "square";
+    } else if (["circle", "●"].includes(tok)) {
       options.shape = "circle";
     } else if (["up_pointing_triangle", "triangle", "▲"].includes(tok)) {
       options.shape = "up_pointing_triangle";
@@ -24,10 +26,21 @@ const createSvgStr = ({ color, shape }) => {
   const height = 20;
 
   const figureElementStr = (function () {
-    if (shape === "circle") {
+    if (shape === "square") {
+      // GitHub Copilot: 視覚的にバランスの良い正方形を書く。上下左右にわずかに余白を設ける。
+      const margin = width * 0.1;
+      return `<rect x="${margin}" y="${margin}" width="${
+        width - margin * 2
+      }" height="${height - margin * 2}" fill="${color}"></rect>`;
+    } else if (shape === "circle") {
+      // GitHub Copilot: 視覚的にバランスの良い円形を書く。上下左右にわずかに余白を設ける。
+      const radius = width / 2;
       const cx = width / 2;
       const cy = height / 2;
-      return `<circle cx="${cx}" cy="${cy}" r="${cx}" fill="${color}"></circle>`;
+      const margin = width * 0.1;
+      return `<circle cx="${cx}" cy="${cy}" r="${
+        radius - margin
+      }" fill="${color}"></circle>`;
     } else if (shape === "up_pointing_triangle") {
       // GitHub Copilot: 視覚的にバランスの良い正三角形を書く。上下の余白が均等になるように配置する。
       const side = width * 0.8;
