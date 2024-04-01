@@ -8,8 +8,10 @@ const parseOptions = (optionsStr = "") => {
   };
 
   for (const tok of toks) {
-    if (["circle"].includes(tok)) {
-      options.shape = tok;
+    if (["circle", "●"].includes(tok)) {
+      options.shape = "circle";
+    } else if (["up_pointing_triangle", "triangle", "▲"].includes(tok)) {
+      options.shape = "up_pointing_triangle";
     }
   }
   return options;
@@ -24,6 +26,10 @@ const createSvgStr = ({ color, shape }) => {
       const cx = width / 2;
       const cy = height / 2;
       return `<circle cx="${cx}" cy="${cy}" r="${cx}" fill="${color}"></circle>`;
+    } else if (shape === "up_pointing_triangle") {
+      return `<polygon points="0,${height} ${width},${height} ${
+        width / 2
+      },0" fill="${color}"></polygon>`;
     }
     return `<rect x="0" y="0" width="${width}" height="${height}" fill="${color}"></rect>`;
   })();
