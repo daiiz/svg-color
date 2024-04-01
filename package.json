@@ -12,6 +12,6 @@
     "color-convert": "^2.0.1"
   },
   "devDependencies": {
-    "vercel": "^19.1.2"
+    "vercel": "^33.6.2"
   }
 }
