@@ -12,28 +12,28 @@
   ],
   "routes": [
     {
-      "src": "/hex/(?<hex>[0-9a-fA-F]{6}).svg",
-      "dest": "src/hex.js?hex=$hex"
+      "src": "/hex/(?<hex>[0-9a-fA-F]{6})(?<options>.*).svg",
+      "dest": "src/hex.js?hex=$hex&options=$options"
     },
     {
-      "src": "/r/(?<r>[\\d]{1,3})/g/(?<g>[\\d]{1,3})/b/(?<b>[\\d]{1,3})/a/(?<a>[\\d\\.]+).svg",
-      "dest": "src/rgba.js?r=$r&g=$g&b=$b&a=$a"
+      "src": "/r/(?<r>[\\d]{1,3})/g/(?<g>[\\d]{1,3})/b/(?<b>[\\d]{1,3})/a/(?<a>[\\d\\.]+)(?<options>.*).svg",
+      "dest": "src/rgba.js?r=$r&g=$g&b=$b&a=$a&options=$options"
     },
     {
-      "src": "/r/(?<r>[\\d]{1,3})/g/(?<g>[\\d]{1,3})/b/(?<b>[\\d]{1,3}).svg",
-      "dest": "src/rgba.js?r=$r&g=$g&b=$b"
+      "src": "/r/(?<r>[\\d]{1,3})/g/(?<g>[\\d]{1,3})/b/(?<b>[\\d]{1,3})(?<options>.*).svg",
+      "dest": "src/rgba.js?r=$r&g=$g&b=$b&options=$options"
     },
     {
-      "src": "/h/(?<h>[\\d]{1,3})/s/(?<s>[\\d]{1,3})/l/(?<l>[\\d]{1,3})/a/(?<a>[\\d\\.]+).svg",
-      "dest": "src/hsla.js?h=$h&s=$s&l=$l&a=$a"
+      "src": "/h/(?<h>[\\d]{1,3})/s/(?<s>[\\d]{1,3})/l/(?<l>[\\d]{1,3})/a/(?<a>[\\d\\.]+)(?<options>.*).svg",
+      "dest": "src/hsla.js?h=$h&s=$s&l=$l&a=$a&options=$options"
     },
     {
-      "src": "/h/(?<h>[\\d]{1,3})/s/(?<s>[\\d]{1,3})/l/(?<l>[\\d]{1,3}).svg",
-      "dest": "src/hsla.js?h=$h&s=$s&l=$l"
+      "src": "/h/(?<h>[\\d]{1,3})/s/(?<s>[\\d]{1,3})/l/(?<l>[\\d]{1,3})(?<options>.*).svg",
+      "dest": "src/hsla.js?h=$h&s=$s&l=$l&options=$options"
     },
     {
-      "src": "/c/(?<c>[\\d]{1,3})/m/(?<m>[\\d]{1,3})/y/(?<y>[\\d]{1,3})/k/(?<k>[\\d]{1,3}).svg",
-      "dest": "src/cmyk.js?c=$c&m=$m&y=$y&k=$k"
+      "src": "/c/(?<c>[\\d]{1,3})/m/(?<m>[\\d]{1,3})/y/(?<y>[\\d]{1,3})/k/(?<k>[\\d]{1,3})(?<options>.*).svg",
+      "dest": "src/cmyk.js?c=$c&m=$m&y=$y&k=$k&options=$options"
     },
     {
       "src": "/.*",
