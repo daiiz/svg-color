@@ -1,4 +1,4 @@
-function parseOptions(optionsStr = "") {
+const parseOptions = (optionsStr = "") => {
   const toks = optionsStr
     .split(".")
     .map((tok) => tok.trim())
@@ -13,7 +13,7 @@ function parseOptions(optionsStr = "") {
     }
   }
   return options;
-}
+};
 
 const createSvgStr = ({ color, shape }) => {
   const width = 20;
