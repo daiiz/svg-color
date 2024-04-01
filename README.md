@@ -40,3 +40,7 @@ $ npm run start
 - https://svg-color.vercel.app/c/100/m/0/y/0/k/0.svg
 - https://svg-color.vercel.app/c/100/m/0/y/0/k/0.▼.svg
 - http://localhost:3000/c/100/m/0/y/0/k/0.svg
+
+## Shapes
+
+- Read the function [parseOptions](https://github.com/daiiz/svg-color/blob/master/lib.js) for more details.
