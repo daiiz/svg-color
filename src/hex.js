@@ -5,6 +5,6 @@ module.exports = async (req, res) => {
   const options = parseOptions(req.query.options);
   const color = `#${hex}`;
   const svgStr = createSvgStr({ ...options, color });
-  res.writeHead(200, createResponseHeader({ color }));
+  res.writeHead(200, createResponseHeader({ ...options, color }));
   res.end(svgStr);
 };

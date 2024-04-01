@@ -74,11 +74,12 @@ const createSvgStr = ({ color, shape }) => {
   ].join("");
 };
 
-const createResponseHeader = ({ color }) => {
+const createResponseHeader = ({ color, shape }) => {
   return {
     "Content-Type": 'image/svg+xml; charset="utf-8";',
     "Cache-Control": "public, max-age=86400",
     "X-COLOR": color,
+    "X-SHAPE": shape,
   };
 };
 
